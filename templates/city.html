@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cities
+{% endblock %}
+
+{% block main %}
+<div class="col-md-2"></div>
+    <form action="/city" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="city" placeholder="City Name" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add City</button>
+    </form>
+
+    <p></p>
+
+
+  <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">City</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for city in city %}
+    <tr>
+      <td>{{city.name}}</td>
+      <td><a href="/delete/{{ city.city_id }}"class="btn btn-danger">Remove City</a></td>
+    </tr>
+      {% endfor %}
+
+
+  </tbody>
+</table>
+
+
+
+
+
+
+    <div class="col-md-2"></div>
+{% endblock %}

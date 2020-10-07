@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Preferences
+{% endblock %}
+
+{% block main %}
+<form action="/preferences" method="post">
+<label for="exampleFormControlSelect2">Select currency: </label>
+<input class="form-control" name="currency" placeholder="Currency" type = "text">
+
+  <p> </p>
+
+<label for="exampleFormControlSelect3">Select unit of degree: </label>
+  <input type="checkbox" name="deg" value="C" /> Celcius (C°)
+  <input type="checkbox" name="deg" value="F" /> Fahrenheit (F°)
+
+    <p> </p>
+
+<label for="exampleFormControlSelect3">Select unit of length: </label>
+  <input type="checkbox" name="dis" value="km" /> Kilometers
+  <input type="checkbox" name="dis" value="miles" /> Miles
+
+   <p> </p>
+
+  <button class="btn btn-success" type="submit">Save</button>
+</form>
+{% endblock %}

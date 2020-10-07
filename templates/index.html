@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+    {% for city in all_info%}
+
+    <div class="card">
+      <div class="card-image card2"></div>
+      <div class="card-text card2">
+        <h2>{{ city.name }}</h2>
+        <p><img src = "{{city.flag}}" alt = "Flag" width="150" height="90"></img><p>
+        <p><img src = "http://openweathermap.org/img/w/{{city.icon}}.png" alt = "Image"></img>{{ city.temp}} {{city.degree_type}}°<p>
+          {{ city.description }}<p>
+        </p>
+      </div>
+      <div class="card-stats card2">
+        <div class="stat">
+          <div class="value">1 {{city.currency_type}}</div>
+          <div class="type">{{city.currency_price}} {{city.currency_name}}</div>
+        </div>
+        <div class="stat border">
+          <div class="value">Timezone</div>
+          <div class="type">{{city.time_zone}}</div>
+        </div>
+        <div class="stat">
+          <div class="value">Distance</div>
+          <div class="type">{{city.distance}} {{city.distance_type}}</div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+{% endblock %}
